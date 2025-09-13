@@ -499,7 +499,7 @@ const listing1 = {
  */
 //WRITE YOUR CODE BELOW
 
-console.log(`This house at ${listing1} is owned by ${listing1.currentOwner}`);
+console.log(`This house at ${listing1.address} is owned by ${listing1.currentOwner}`);
 
 
 /**
@@ -517,7 +517,19 @@ console.log(`This house at ${listing1} is owned by ${listing1.currentOwner}`);
  */
 //WRITE YOUR CODE BELOW
 
+function realtorFees(listing) {
 
+const listingPrice = Number(listing.price.replace ("$","").replace(",",""))
+
+ const realtorFee = listingPrice  <= 450000
+ ?   listingPrice * 0.025
+ :   listingPrice * 0.02;
+
+
+return realtorFee;
+}
+
+console.log (realtorFees(listings[3]));
 
 /**
  * Task-5: Sort the listing array ascendingly in a new variable called listingAscendingly
@@ -536,3 +548,6 @@ console.log(listingAscendingly);
  * Name the variable newBuiltListings
  */
 //WRITE YOUR CODE BELOW
+
+const newBuiltListings = listings.filter (listing => Number(listing.propertySummary.builtIn) >=1990);
+console.log(newBuiltListings);
