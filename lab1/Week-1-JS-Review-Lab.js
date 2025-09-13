@@ -490,6 +490,7 @@ const listing1 = {
   isSold: false,
   currentOwner: "Jane Doe"
 };
+
 /**
  * Task-3: print to console a text using template literals that contains the name of the owner,
  * and their current address for listing1.
@@ -497,6 +498,9 @@ const listing1 = {
  * "This house at (address) is owned by (currentOwner)"
  */
 //WRITE YOUR CODE BELOW
+
+console.log(`This house at ${listing1} is owned by ${listing1.currentOwner}`);
+
 
 /**
  * NOTE: THIS TASK IS TRICKY!
@@ -513,10 +517,19 @@ const listing1 = {
  */
 //WRITE YOUR CODE BELOW
 
+
+
 /**
  * Task-5: Sort the listing array ascendingly in a new variable called listingAscendingly
  */
 //WRITE YOUR CODE BELOW
+
+const listingAscendingly = listings
+.slice()
+.sort((a,b) => 
+ Number(a.price.replace("$","").replace(",","")) - Number(b.price.replace("$","").replace(",",""))
+);
+console.log(listingAscendingly);
 
 /**
  * Task-6: filter all the listings by bulitIn propertity for all houses built on or after 1990.
